@@ -23,7 +23,6 @@ vignettes/*.pdf
 *.knit.md
 
 # R files (.rds, workspace etc)
-*.rds
 *.RData
 *.Rhistory
 
