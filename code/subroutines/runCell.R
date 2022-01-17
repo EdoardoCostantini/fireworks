@@ -29,7 +29,7 @@ runCell <- function(rp, cond, fs, parms) {
                                 imp_target = c("yc1", "yc2", "yc3",
                                                "yp1", "yp2", "yp3",
                                                "trt"),
-                                ncfs = 18L)
+                                ncfs = 19L)
 
     # Impute with pcr.all -------------------------------------------------
     pcrall_mids <- imputePCAall(Z = fdd, ncfs = 24L)
