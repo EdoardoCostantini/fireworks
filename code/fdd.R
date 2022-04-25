@@ -1,15 +1,26 @@
 # Project:   code
-# Objective: Explore fdd procedure as in FIMD book
+# Objective: Explore fdd data and omputation procedure done in FIMD book
 # Author:    Edoardo Costantini
 # Created:   2021-12-09
-# Modified:  2021-12-09
+# Modified:  2022-03-31
 
   library(mice)
   library(lattice)
   library(dplyr)
   library(ggplot2)
 
-# Impute as in FIMD
+# Explore the data -------------------------------------------------------------
+
+  mdpatts <- md.pattern(fdd)
+  mdpatts[nrow(mdpatts), -c(1, ncol(mdpatts))]
+
+  # Percentage of per variable missing cases
+  sort(colMeans(is.na(fdd)), decreasing = TRUE)*100
+
+  # Number of compelte cases
+  sum(rowSums(is.na(fdd)) == 0)
+
+# Impute as in FIMD ------------------------------------------------------------
   meth <- make.method(fdd)
   meth["yc1"] <- "~I(yca1 + ycb1 + ycc1)"
   meth["yc2"] <- "~I(yca2 + ycb2 + ycc2)"
