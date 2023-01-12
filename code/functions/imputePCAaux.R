@@ -2,9 +2,9 @@
 # Objective: Imputation function for MI-PCA-AUX method
 # Author:    Edoardo Costantini
 # Created:   2021-12-20
-# Modified:  2021-12-20
+# Modified:  2022-10-11
 
-imputePCAaux <- function(Z, imp_target, ncfs = 1){
+imputePCAaux <- function(Z, imp_target, ncfs = 1, maxit = 20){
 
   ## Input: 
   # @Z: dataset w/ missing values,
@@ -68,7 +68,7 @@ imputePCAaux <- function(Z, imp_target, ncfs = 1){
   imp_PCA_mids <- mice::mice(Z_mice,
                              m      = 5,
                              method = "pmm",
-                             maxit  = 20,
+                             maxit  = maxit,
                              predictorMatrix = pred_mat,
                              printFlag = FALSE,
                              threshold = 1L,
