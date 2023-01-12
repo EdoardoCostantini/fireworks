@@ -1,17 +1,19 @@
 # Project:   fireworks
-# Objective: Install packages required for running simulation
+# Objective: Prep environment script (install packs and the likes)
 # Author:    Edoardo Costantini
 # Created:   2022-04-26
-# Modified:  2022-04-26
-# Notes:     Assuming working directory ./code/
+# Modified:  2022-10-10
 
-# Load init script to lists the names of the packages required
-source("init.R")
+# Install packages from the init script
 
-# 1. Install all packages you can
-install.packages(cran_list)
+  install.packages(cran_list)
 
-# 2. Install Local mice.sim.pcr
-install.packages("../input/mice.pcr.sim_3.13.9.tar.gz",
-                 repos = NULL, 
-                 type = "source")
+# Install costum mice packages
+
+  install.packages("../input/mice.pcr.sim_3.13.9.tar.gz",
+                   repos = NULL,
+                   type = "source")
+
+  install.packages("../input/mice_3.13.18.tar.gz",
+                   repos = NULL,
+                   type = "source")
