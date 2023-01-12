@@ -37,7 +37,7 @@ runCell <- function(rp, cond, fs, parms) {
     # Impute with pmm PCR -------------------------------------------------
     vbv_mids <- mice(fdd,
                      meth = "pcr.pmm",
-                     maxit = 20,
+                     maxit = 40,
                      npc = 24L,
                      threshold = 1L,
                      maxcor = 1L,
